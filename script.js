@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clickCount++;
 
       if (clickCount === 1) {
-        window.open("https://s.shopee.co.id/8AQTTJGPkn", "_blank");  /* ===GANTI # DENGAN LINK DI ANTARA "dan"==== */
+        window.open("https://s.shopee.co.id/6AfP62EH0O", "_blank");  /* ===GANTI # DENGAN LINK DI ANTARA "dan"==== */
       } else {
         modal.classList.add("active");
         playSuccessCheck();
