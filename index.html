@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DANAKagetPRO Aplikasi Resmi Penghasil Uang</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Aplikasi DANA Kaget<span>PRO</span></h1>
+
+  <div class="promo-text">
+    Gerak Cepat, Mainkan Gamenya dan Dapatkan Saldo
+    <span class="highlight">DANA Kaget</span>
+    sepuasnya!
+  </div>
+
+  <div class="hero-image">
+    <img src="danakaget.webp" alt="DANAKagetPRO Bonus"
+         width="320" height="320"
+         loading="lazy" decoding="async">
+  </div>
+
+  <button id="ctaBtn" class="cta-btn">
+    <b>MAINKAN SEKARANG</b>
+  </button>
+</header>
+
+<section class="live-section">
+  <div class="live-box">
+    <div class="live-header">
+      <span>Pembayaran Real-time</span>
+      <span class="live-badge">● LIVE</span>
+    </div>
+
+    <div class="live-list">
+      <div id="liveTrack"></div>
+    </div>
+  </div>
+</section>
+
+<div id="rewardModal" class="modal-overlay">
+  <div class="modal-box dana-style">
+    <div class="success-check">
+      <div id="successLottie"></div>
+    </div>
+
+    <h2>DANA Kaget Berhasil Ditambahkan</h2>
+
+    <p class="modal-desc">
+      Saldo DANA Kaget Anda telah berhasil diproses dan
+      akan segera tersedia di akun Anda.
+    </p>
+
+    <button class="modal-btn dana-btn" onclick="goCek()">
+      Cek Saldo Sekarang
+    </button>
+
+    <small class="modal-note">
+      Proses aman • Sistem otomatis • Tanpa biaya
+    </small>
+  </div>
+</div>
+
+<div class="money-rain" aria-hidden="true">
+  <span>💰</span><span>💵</span><span>💰</span>
+  <span>💵</span><span>💰</span><span>💵</span>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
+

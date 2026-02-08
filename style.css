@@ -1,0 +1,845 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at top,
+    #2a0a4a,
+    #0b0218 60%,
+    #000000
+  );
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .cta-btn { padding: 14px 18px; font-size: 1.1rem; }
+  .live-list { height: 200px; }
+}
+.live-item {
+  background: rgba(255,255,255,0.08);
+}
+.live-item {
+  padding: 14px;
+  margin-bottom: 10px;
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.testi-card {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TESTIMONI BOX */
+.testi-box {
+  margin: 20px auto 40px;
+  width: 90%;
+  max-width: 350px;
+  height: 180px; /* INI AREA KOTAK MERAH */
+  overflow: hidden;
+  border-radius: 15px;
+  background: #f5f5f5;
+  padding: 10px;
+}
+
+/* TRACK SCROLL KE ATAS */
+.testi-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* GAP ANTAR TESTIMONI */
+  animation: scrollUp 10s linear infinite;
+}
+
+/* CARD TESTIMONI */
+.testi-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+/* ICON USER */
+.user-icon {
+  font-size: 1.5rem;
+}
+
+/* ANIMASI SCROLL KE ATAS */
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.hero-image img {
+  filter: drop-shadow(0 10px 25px rgba(255,215,0,0.6));
+}
+
+.hero {
+  min-height: auto;        /* HAPUS 100vh */
+  padding-top: 60px;       /* JARAK ATAS */
+  padding-bottom: 2px;    /* JARAK BAWAH */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+ 
+  animation: titleBlink 2.5s infinite;
+}
+
+.hero h1 span {
+  color: #ffd700;
+}
+.hero,
+.live-section {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-image img {
+  width: 90%;
+  max-width: 480px;
+      margin-top: 20px;
+  animation: floatPulse 3.5s ease-in-out infinite;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.cta-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #ffb703;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,183,3,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255,183,3,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,183,3,0); }
+}
+
+.testimoni {
+  background: #fff;
+  color: #333;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.testimoni h2 {
+  margin-bottom: 15px;
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.card {
+  min-width: 250px;
+  margin: 0 10px;
+  padding: 15px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 99999; /* PALING DEPAN */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* BOX */
+.modal-box {
+  position: relative;
+  width: 90%;
+  max-width: 340px;
+  padding: 26px 22px;
+  border-radius: 22px;
+  text-align: center;
+
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+  color: #fff;
+  box-shadow: 0 30px 80px rgba(114,9,183,.7);
+
+  animation: popUp .6s cubic-bezier(.2,1.3,.4,1);
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(.6) translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-box h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  opacity: .95;
+}
+
+/* BUTTON */
+.modal-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#ffd60a,#ff9f1c);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,214,10,.6); }
+  100% { box-shadow: 0 0 0 18px rgba(255,214,10,0); }
+}
+
+
+/* LIVE SECTION */
+.live-section {
+  padding: 25px 0 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.live-box {
+  width: 90%;
+  max-width: 380px;
+  background: rgba(30,41,59,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* HEADER */
+.live-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ff5f5f;
+  font-size: 0.75rem;
+  background: rgba(255,95,95,0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  animation: blink 1.2s infinite;
+}
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+
+/* LIST */
+.live-list {
+  height: 230px;
+  overflow: hidden;
+}
+
+/* TRACK SCROLL */
+.live-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: liveScroll 14s linear infinite;
+}
+
+/* ITEM */
+.live-item {
+  display: flex;
+  align-items: center;
+  background: rgba(15,23,42,0.9);
+  border-radius: 14px;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* AVATAR */
+.live-item img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* INFO */
+.live-info {
+  flex: 1;
+  text-align: left;
+}
+
+.live-info strong {
+  font-size: 0.9rem;
+}
+
+.live-info small {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* AMOUNT */
+.live-amount {
+  text-align: right;
+}
+
+.amount {
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.live-amount small {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* SCROLL UP */
+@keyframes liveScroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+
+.testimoni,
+.testi-box,
+.marquee {
+  display: none !important;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(255,95,95,0);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 12px rgba(255,95,95,0.6);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(255,95,95,0);
+  }
+}
+
+
+@keyframes titleBlink {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255,215,0,0.6);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 25px rgba(255,215,0,1);
+  }
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 20px rgba(0,255,255,0.4));
+  }
+  50% {
+    transform: translateY(-18px) scale(1.05);
+    filter: drop-shadow(0 0 35px rgba(0,255,255,0.8));
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 20px rgba(0,255,255,0.4));
+  }
+}
+
+
+.money-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.money-rain span {
+  position: absolute;
+  top: -10%;
+  font-size: 1.8rem;
+  animation: fall linear infinite;
+  opacity: 0.6;
+}
+.money-rain span {
+  filter: blur(0.2px);
+}
+
+/* posisi random */
+.money-rain span:nth-child(1) { left: 10%; animation-duration: 6s; }
+.money-rain span:nth-child(2) { left: 25%; animation-duration: 8s; }
+.money-rain span:nth-child(3) { left: 40%; animation-duration: 7s; }
+.money-rain span:nth-child(4) { left: 55%; animation-duration: 9s; }
+.money-rain span:nth-child(5) { left: 70%; animation-duration: 6.5s; }
+.money-rain span:nth-child(6) { left: 85%; animation-duration: 8.5s; }
+
+@keyframes fall {
+  from { transform: translateY(0); }
+  to { transform: translateY(120vh); }
+}
+
+.promo-text {
+  max-width: 85%;
+  margin: 5px 0px;
+padding: 10px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 0.8s ease;
+}
+
+.promo-text .highlight {
+  color: #ffd54f;
+  font-weight: 700;
+}
+
+/* Animasi masuk halus */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.promo-text .highlight {
+  color: #ffd54f;
+  font-weight: 700;
+  animation: glow 1.8s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 4px rgba(255, 213, 79, 0.4);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(255, 213, 79, 0.9);
+  }
+}
+
+
+
+/* ================= DANA STYLE MODAL ================= */
+
+.modal-box.dana-style {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 24px;
+  padding: 28px 24px;
+  max-width: 340px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  animation: popUp .45s ease;
+}
+
+/* ICON CEKLIS */
+/* CEKLIS HIJAU */
+.modal-box.dana-style > svg,
+.modal-box.dana-style .check-icon {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* ANIMASI MUNCUL */
+@keyframes checkPop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* GLOW HIJAU */
+@keyframes checkGlow {
+  from {
+    box-shadow: 0 0 0 rgba(34,197,94,0.4);
+  }
+  to {
+    box-shadow: 0 0 18px rgba(34,197,94,0.9);
+  }
+}
+
+
+/* TITLE */
+.modal-box.dana-style h2 {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* DESC */
+.modal-box.dana-style .modal-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* BUTTON DANA */
+.dana-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  animation: btnPulseGreen 2s infinite;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.dana-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(34,197,94,.55);
+}
+
+/* PULSE HIJAU */
+@keyframes btnPulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(34,197,94,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34,197,94,0);
+  }
+}
+
+
+/* NOTE */
+.modal-note {
+  display: block;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #64748b;
+  text-align: center;
+}
+
+/* LOTTIE */
+.check-lottie {
+  width: 90px;
+  height: 90px;
+
+  margin: -65px auto 10px; /* naik ke kotak biru */
+  background: #2563eb;     /* biru */
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 35px rgba(37,99,235,.6);
+}
+
+
+
+/* HAPUS STYLE CEKLIS LAMA (BIRU) */
+.modal-box.dana-style .dana-check {
+  background: #22c55e !important;
+  box-shadow: none;
+}
+
+/* PASTIKAN TIDAK ADA DUPLIKAT */
+.modal-box.dana-style svg {
+  display: block;
+}
+/* JIKA ADA ICON CHECK LAIN, SEMBUNYIKAN */
+.modal-box.dana-style .icon-check,
+.modal-box.dana-style .check-circle {
+  display: none !important;
+}
+
+/* HEADER HIJAU ATAS */
+.modal-header-success {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: calc(100% - 40px);
+  height: 38px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: slideDown .5s ease;
+}
+
+/* ANIMASI MASUK */
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* ICON CEKLIS */
+.modal-header-success svg {
+  animation: checkPop 0.6s ease;
+}
+
+/* JARAK KONTEN AGAR TIDAK TERTINDIH */
+.modal-box.dana-style {
+  padding-top: 70px !important;
+}
+
+/* HAPUS BAR CEKLIS HIJAU DI ATAS LAYAR */
+body > .modal-header-success,
+body > .success-bar,
+body > .top-success-bar {
+  display: none !important;
+}
+
+/* HAPUS CEKLIS BULAT BESAR DI MODAL */
+.modal-box.dana-style .dana-check {
+  display: none !important;
+}
+
+/* HEADER HIJAU KECIL DI MODAL */
+.modal-header-success {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 48px);
+  height: 32px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: headerSlide .4s ease;
+}
+
+/* ANIMASI HALUS */
+@keyframes headerSlide {
+  from {
+    transform: translate(-50%, -12px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* KASIH JARAK ISI MODAL */
+.modal-box.dana-style {
+  padding-top: 10px !important;
+}
+
+
+/* OVERLAY MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* HILANGKAN BAR HIJAU GLOBAL DI ATAS */
+body > .modal-header-success {
+  display: none !important;
+}
+
+
+
+/* POSISI CEKLIS NAIK KE ATAS */
+.modal-box.dana-style {
+  position: relative;
+}
+
+.modal-box.dana-style .dana-check {
+  position: absolute;
+  top: -36px;              /* ⬅️ naikkan ceklis */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+
+
+@keyframes checkDrop {
+  from {
+    transform: translate(-50%, -10px) scale(.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-box.dana-style .dana-check {
+  animation: checkDrop .4s ease;
+}
+
+
+/* CEKLIS SUCCESS BESAR */
+.success-check {
+ width: 90px;
+    height: 90px;
+    margin: -60px auto 20px;
+ /* naik & lebih dominan */
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 
+    0 0 0 10px rgba(34,197,94,0.15),
+    0 25px 60px rgba(34,197,94,.65);
+
+  animation: successPop .5s ease;
+  z-index: 10;
+}
+/* ANIMASI POP */
+@keyframes successPop {
+  from {
+    transform: scale(.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* AREA LOTTIE CEKLIS */
+#successLottie {
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes greenGlow {
+  0% { box-shadow: 0 0 0 10px rgba(34,197,94,0.15); }
+  100% { box-shadow: 0 0 0 18px rgba(34,197,94,0.25); }
+}
+
+.success-check {
+  animation: successPop .5s ease, greenGlow 1.5s infinite alternate;
+}
+
+
+
+
